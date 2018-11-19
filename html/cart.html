@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="shortcut icon" type="image/x-icon" href="/images/logo.jpg">
+		<link rel="stylesheet" type="text/css" href="/css/cart.css"/>
+	</head>
+	<body>
+		<header></header>
+		
+		<div class="cartTil">
+			<div class="w1200">
+				<h1>我的购物车</h1>
+				<table>
+					<thead>
+						<tr>
+							<th width="110">
+								<span class="checkAll act"></span>
+								<span class="all">全选</span>
+							</th>
+							<th width="470">商品名称</th>
+							<th width="110">单价</th>
+							<th width="240">数量</th>
+							<th width="110">小计</th>
+							<th width="160">操作</th>
+						</tr>
+					</thead>
+						
+					
+					<tbody id="tbody">
+					<script type="text/html" id="goods">
+					{{each goods item i}}
+						<tr class="shop">
+							<td width="110">
+								<span class="checkBox act"></span>
+							</td>
+							<td width="470">
+								<a href="javascript:;">
+									<img src="/images/detail/id_{{item.id}}/pic.jpg"/>
+									<p class="name">{{item.description}}</p>
+									<p class="size">尺码：<i>38.5</i></p>
+								</a>
+							</td>
+							<td width="110">￥ <span class="_price">{{item.price}}</span></td>
+							<td width="240">
+								<ul>
+									<li class="subone" data-id={{item.id}}> - </li>
+									<li class="mid">
+										<span class="count"> {{item.num}} </span>
+									</li>
+									<li class="addone" data-id={{item.id}}> + </li>
+								</ul>
+							</td>
+							<td width="110" class="smallclc">￥ <span class="scount">{{item.price * item.num}}</span></td>
+							<td width="160">
+								<span class="del" data-id = {{item.id}}></span>
+							</td>
+							
+						</tr>
+					{{/each}}
+					</script>
+					</tbody>
+				</table>
+			
+				<!--暂时占位置的-->
+				<div id="pay_code">
+					<span id="close">X</span>
+					<img src="/images/zfb_money.jpg">
+				</div>
+				<div class="totalPrice">
+					<span>合计 : <i id="money"></i></span>
+					<button id="go_pay">去结算</button>
+				</div>
+			</div>
+		</div>
+		
+		
+		
+		<footer></footer>
+		<script type="text/javascript" src="/libs/require/require.js" data-main="/js/cart.js"></script> 
+		
+	</body>
+</html>

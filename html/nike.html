@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="shortcut icon" type="image/x-icon" href="/images/logo.jpg">
+		<link rel="stylesheet" type="text/css" href="/css/nike.css"/>
+	</head>
+	<body>
+		<header></header>
+		
+		<div class="prodList">
+			<div class="_prodList w1200">
+				<a href="#"><img src="/images/nike.jpg"/></a>
+				<div class="brandTab">
+					<a href="#"></a>
+					<a href="#"></a>
+					<a href="#"></a>
+					<a href="#"></a>
+					<a href="#"></a>
+					<a href="#"></a>
+				</div>
+				
+				<div class="prodList-main">
+					<ul id="shoes">
+						<script type="text/html" id="prodShoes">
+							{{each dataShoes item i}}
+								<li>
+									<a href="/html/detail.html?id={{item.id}}"  target="_blank">
+										<img src={{item.src}}>
+										<p class="gl-name">{{item.description}}</p>
+										<p class="gl-price">￥
+											<span class="nowPri">{{item.nowPrice}}</span>
+											<span>({{item.discount}})</span>
+											<span class="prevPri">({{item.prevPrice}})</span>
+										</p>
+									</a>
+								</li>
+							{{/each}}
+						</script>
+						
+						
+					</ul>
+				</div>
+			
+				
+				<div id="ceshi">
+				<script type="text/html" id="prod">
+					{{each data item i}}
+						<li class="test">
+							<a href="/html/detail.html?id={{item.id}}"  target="_blank">
+								<img src={{item.pic}}>
+								<p class="gl-name">{{item.tit}}</p>
+								<p class="gl-price">￥
+									<span class="nowPri">{{item.nowprice}}</span>
+									<span class="dazhe">({{item.nowprice / item.prevprice * 10}}</span>折)
+									<span class="prevPri">({{item.prevprice}})</span>
+								</p>
+							</a>
+						</li>
+					{{/each}}
+					</script>
+				</div>
+			</div>
+		</div>
+		
+		
+		<footer></footer>
+		<script type="text/javascript" src="/libs/require/require.js" data-main="/js/nike.js"></script> 
+	</body>
+</html>
